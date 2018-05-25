@@ -69,3 +69,21 @@ consPrime m = cons ++ (take totaking (getfilter cons [last cons..]))
 --------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------
 
+--'******************************************************************
+  --Problem 4 "Find the largest palindrome made from the product of 3 num"
+findLargestPalindrome:: Integer
+findLargestPalindrome = maximum $ take 20 $ [x*y | x <- m, y <- m, f (x*y) == True]
+    where f = (generateNum.toList)
+          m = [999,998..1]
+
+generateNum :: [Integer] -> Bool
+generateNum [] = True
+generateNum (_:[]) = True
+generateNum num1 
+  | (last num1)==(head num1) = True && (generateNum (tail $ init num1))
+  | otherwise = False
+
+toList :: Integer -> [Integer]
+toList num 
+  | (div num 10) == 0 = [mod num 10] 
+  | otherwise = (mod num 10):(toList (div num 10))
