@@ -87,3 +87,12 @@ toList :: Integer -> [Integer]
 toList num 
   | (div num 10) == 0 = [mod num 10] 
   | otherwise = (mod num 10):(toList (div num 10))
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+--'******************************************************************
+--Problem 5 "Find the smallest number what It will be divisible by 20 less numbers"
+findLessD20 :: Integer
+findLessD20 = foldl (\x y -> ((x*y) `quot` (mcd x y))) 1 [2..20]
+  where mcd m 0 = m
+        mcd m n = mcd n (mod m n)

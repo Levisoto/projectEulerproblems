@@ -16,4 +16,7 @@ main = do
   putStrLn "Prob 4"
   print $ findLargestPalindrome
   putStrLn "==================\n"
+  putStrLn "Prob 5"
+  print $ findLessD20
+  putStrLn "==================\n"
 
