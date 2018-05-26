@@ -96,3 +96,13 @@ findLessD20 :: Integer
 findLessD20 = foldl (\x y -> ((x*y) `quot` (mcd x y))) 1 [2..20]
   where mcd m 0 = m
         mcd m n = mcd n (mod m n)
+--------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
+
+--'******************************************************************
+--Problem 6 "Find the difference between the sum of the first one hundred respect to sum of squares and square of sum them"
+findSquareD :: Integer
+findSquareD = abs $ m - n
+  where m = foldl (\x y -> x + y*y) 1 [2..100]
+        n = (\x -> x*x) $ sum [1..100]
+

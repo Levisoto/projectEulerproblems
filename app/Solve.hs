@@ -19,4 +19,6 @@ main = do
   putStrLn "Prob 5"
   print $ findLessD20
   putStrLn "==================\n"
-
+  putStrLn "Prob 6"
+  print $ findSquareD
+  putStrLn "==================\n"
